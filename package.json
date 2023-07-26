@@ -1,0 +1,27 @@
+{
+  "name": "shader-slider",
+  "version": "1.1.0",
+  "source": "src/shader-slider.js",
+  "module": "dist/shader-slider.es.js",
+  "main": "dist/shader-slider.js",
+  "umd:main": "dist/shader-slider.umd.js",
+  "devDependencies": {
+    "microbundle": "*",
+    "prettier": "*",
+    "uglify-es": "*"
+  },
+  "scripts": {
+    "build": "microbundle build --globals three=THREE,gsap/TweenMax=TweenMax",
+    "watch": "microbundle watch --globals three=THREE,gsap/TweenMax=TweenMax",
+    "publish": "npm publish --access public",
+    "minify": "uglifyjs --mangle --compress -- js/hover.js > js/hover.min.js",
+    "prettify": "prettier --trailing-comma=es5 --single-quote --print-width=120 --write ./js/hover.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "gsap": "^2.0.2",
+    "three": "^0.99.0"
+  }
+}

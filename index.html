@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset=utf-8>
+	<title>title</title>
+	<style>
+		.shader-slider {
+			width: 448px;
+			height: 576px;
+		}
+	</style>
+	<script src="js/three.min.js"></script>
+	<script src="js/TweenMax.min.js"></script>
+	<script src="dist/shader-slider.umd.js"></script>
+</head>
+
+<body>
+	<div class="shader-container">
+		<div class='shader-slider'></div>
+		<div class="shader-slider-controls">
+			<button class="shader-slider-prev">PREVIOUS</button>
+			<button class="shader-slider-next">NEXT</button>
+		</div>
+	</div>
+
+	<script>
+		const slider = new shaderSlider({
+			parent: document.querySelector('.shader-slider'),
+			intensity: 0.5,
+			speed: 2,
+			autoplay: true,
+			autoplaySpeed: 5000,
+			imagesRatio: 576 / 448,
+			images: [
+				'images/shs1.png',
+				'images/shs2.png',
+				'images/shs3.png',
+				'images/shs4.png'
+			],
+			displacementImage: 'images/mask.png'
+		});
+		document.querySelector('.shader-slider-next').addEventListener('click', slider.next);
+		document.querySelector('.shader-slider-prev').addEventListener('click', slider.prev);
+
+	</script>
+
+</body>
+
+</html>
