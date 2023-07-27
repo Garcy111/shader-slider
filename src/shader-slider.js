@@ -71,6 +71,7 @@ void main() {
   var angle1 = firstDefined(opts.angle1, commonAngle);
   var angle2 = firstDefined(opts.angle2, -commonAngle * 3);
   var speed = opts.speed;
+  let autoplayInterval;
   var autoplay = opts.autoplay ? opts.autoplay : false;
   var autoplaySpeed = opts.autoplaySpeed ? opts.autoplaySpeed : 5000;
   var easing = firstDefined(opts.easing, Expo.easeOut);
